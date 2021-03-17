@@ -1,9 +1,7 @@
-
+import Game from "./components/Game";
 
 const App = () => {
-  return (
-    <div></div>
-  );
-}
+  return <Game />;
+};
 
 export default App;

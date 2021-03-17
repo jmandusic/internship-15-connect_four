@@ -1,0 +1,60 @@
+.section__players {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 450px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+
+.section__title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.section__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.form__label {
+  align-self: flex-start;
+  margin-top: 30px;
+  margin-left: 5%;
+  font-style: italic;
+}
+
+.form__input {
+  margin-top: 15px;
+  padding: 5px;
+  width: 95%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+}
+
+.form__submit-button {
+  margin-top: 25px;
+  padding: 10px;
+  width: 60%;
+  border: 2px solid #999999;
+  border-radius: 10px;
+  background-color: #999999;
+  color: white;
+  cursor: pointer;
+}
+
+.form__submit-button:hover {
+    border-color: lightgrey;
+    background-color: lightgrey;
+}
+
+.form__error-message {
+  font-size: 20px;
+  margin-top: 30px;
+  color: red;
+}
