@@ -38,6 +38,7 @@
 }
 
 .form__submit-button {
+  outline: none;
   margin-top: 25px;
   padding: 10px;
   width: 60%;
@@ -49,8 +50,8 @@
 }
 
 .form__submit-button:hover {
-    border-color: lightgrey;
-    background-color: lightgrey;
+  border-color: lightgrey;
+  background-color: lightgrey;
 }
 
 .form__error-message {

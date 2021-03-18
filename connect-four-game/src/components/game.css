@@ -4,7 +4,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-.game {
+.content-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -6,11 +6,13 @@ const FormPlayers = ({ addPlayer, setGameRun }) => {
     name: "",
     color: "red",
     wins: 0,
+    current: true,
   });
   const [playerTwo, setPlayerTwo] = useState({
     name: "",
     color: "yellow",
     wins: 0,
+    current: false,
   });
 
   const [errorMessage, setErrorMessage] = useState("");
@@ -39,6 +41,21 @@ const FormPlayers = ({ addPlayer, setGameRun }) => {
 
     if (!playerTwo.name) {
       setErrorMessage("Player Two name is not defined");
+      return;
+    }
+
+    if (playerOne.name.length < 3 || playerTwo.name.length < 3) {
+      setErrorMessage("Player name requires min 3 characters");
+      return;
+    }
+
+    if (playerOne.name.length > 12 || playerTwo.name.length > 12) {
+      setErrorMessage("Player name requires max 12 characters");
+      return;
+    }
+
+    if (playerOne.name === playerTwo.name) {
+      setErrorMessage("Player names must be different");
       return;
     }
 

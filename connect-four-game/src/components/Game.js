@@ -2,14 +2,14 @@ import { useState } from "react";
 import "./game.css";
 
 import FormPlayers from "./FormPlayers/FormPlayers";
-import GameLogic from "./GameLogic/GameLogic";
+import GameLayout from "./GameLayout/GameLayout";
 
 const Game = () => {
   const [players, setPlayers] = useState([]);
   const [gameRun, setGameRun] = useState(false);
 
   return (
-    <main className="game">
+    <main className="content-wrapper">
       {!gameRun ? (
         <FormPlayers
           addPlayer={(player) =>
@@ -18,7 +18,12 @@ const Game = () => {
           setGameRun={setGameRun}
         />
       ) : (
-        <GameLogic />
+        <GameLayout
+          player1={players[0]}
+          player2={players[1]}
+          setPlayers={setPlayers}
+          gameRun={setGameRun}
+        />
       )}
     </main>
   );
