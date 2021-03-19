@@ -2,11 +2,11 @@ export const initializeBoard = () => {
   const board = [];
 
   for (let index = 0; index < 42; index++) {
-    let noPlayer = {
+    const initialCell = {
       id: index,
-      color: "white",
+      player: undefined,
     };
-    board.push(noPlayer);
+    board.push(initialCell);
   }
 
   return board;

@@ -3,7 +3,9 @@ import "./gameLayout.css";
 import Board from "../Board/Board";
 
 const GameLayout = ({ player1, player2, setPlayers, gameRun }) => {
-  const resetScoreHandler = () => {
+  const resetScoreHandler = (e) => {
+    e.preventDefault();
+
     setPlayers((prevState) => {
       const prevPlayer1 = [...prevState][0];
       const prevPlayer2 = [...prevState][1];
@@ -46,7 +48,12 @@ const GameLayout = ({ player1, player2, setPlayers, gameRun }) => {
         </div>
       </div>
 
-      <Board />
+      <Board
+        player1={player1}
+        player2={player2}
+        setPlayers={setPlayers}
+        gameRun={gameRun}
+      />
     </section>
   );
 };

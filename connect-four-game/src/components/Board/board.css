@@ -9,11 +9,51 @@
     ". . . . . . .";
   margin-right: 100px;
   margin-top: -50px;
-  border: 2px solid black;
+  border: 0.25px solid black;
 }
 
 .board__cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100px;
   height: 100px;
-  border: 2px solid black;
+  border: 0.25px solid black;
+}
+
+.circle__player,
+.circle--white {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  border: thin solid white;
+  border-radius: 50%;
+}
+
+.circle--white {
+  z-index: -3;
+}
+
+.circle__player {
+  z-index: -2;
+  animation: circleDrop 0.5s ease-out;
+}
+
+.circle__player--red {
+  border-color: red;
+  background-color: red;
+}
+
+.circle__player--yellow {
+  border-color: yellow;
+  background-color: yellow;
+}
+
+@keyframes circleDrop {
+  from {
+    transform: translateY(-650px);
+  }
+  to {
+    transform: translateY(0);
+  }
 }

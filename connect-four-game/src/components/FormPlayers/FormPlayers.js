@@ -75,6 +75,7 @@ const FormPlayers = ({ addPlayer, setGameRun }) => {
         <input
           className="form__input"
           placeholder="Player One..."
+          name="player1"
           value={playerOne.name}
           onChange={playerOneNameHandler}
         />
