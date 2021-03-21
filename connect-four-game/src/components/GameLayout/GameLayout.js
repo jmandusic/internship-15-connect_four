@@ -2,18 +2,21 @@ import "./gameLayout.css";
 
 import Board from "../Board/Board";
 
-const GameLayout = ({ player1, player2, setPlayers, gameRun }) => {
+const GameLayout = ({ player1, player2, setPlayers }) => {
   const resetScoreHandler = (e) => {
     e.preventDefault();
 
     setPlayers((prevState) => {
-      const prevPlayer1 = [...prevState][0];
-      const prevPlayer2 = [...prevState][1];
+      const players = [...prevState];
+      const playerOne = { ...players[0] };
+      const playerTwo = { ...players[1] };
 
-      prevPlayer1.wins = 0;
-      prevPlayer2.wins = 0;
+      playerOne.wins = 0;
+      playerTwo.wins = 0;
+      players[0] = playerOne;
+      players[1] = playerTwo;
 
-      return [prevPlayer1, prevPlayer2];
+      return players;
     });
   };
 
@@ -48,12 +51,7 @@ const GameLayout = ({ player1, player2, setPlayers, gameRun }) => {
         </div>
       </div>
 
-      <Board
-        player1={player1}
-        player2={player2}
-        setPlayers={setPlayers}
-        gameRun={gameRun}
-      />
+      <Board player1={player1} player2={player2} setPlayers={setPlayers} />
     </section>
   );
 };

@@ -1,20 +1,16 @@
 import { useState } from "react";
 import "./formPlayers.css";
 
-const FormPlayers = ({ addPlayer, setGameRun }) => {
-  const [playerOne, setPlayerOne] = useState({
-    name: "",
-    color: "red",
-    wins: 0,
-    current: true,
-  });
-  const [playerTwo, setPlayerTwo] = useState({
-    name: "",
-    color: "yellow",
-    wins: 0,
-    current: false,
-  });
+import { initializePlayers } from "../../utils/defaults";
 
+const initialPlayer = {
+  player1: initializePlayers()[0],
+  player2: initializePlayers()[1],
+};
+
+const FormPlayers = ({ addPlayer, setGameRun }) => {
+  const [playerOne, setPlayerOne] = useState(initialPlayer.player1);
+  const [playerTwo, setPlayerTwo] = useState(initialPlayer.player2);
   const [errorMessage, setErrorMessage] = useState("");
 
   const playerOneNameHandler = (e) => {
@@ -44,17 +40,23 @@ const FormPlayers = ({ addPlayer, setGameRun }) => {
       return;
     }
 
-    if (playerOne.name.length < 3 || playerTwo.name.length < 3) {
+    if (playerOne.name.trim().length < 3 || playerTwo.name.trim().length < 3) {
       setErrorMessage("Player name requires min 3 characters");
       return;
     }
 
-    if (playerOne.name.length > 12 || playerTwo.name.length > 12) {
+    if (
+      playerOne.name.trim().length > 12 ||
+      playerTwo.name.trim().length > 12
+    ) {
       setErrorMessage("Player name requires max 12 characters");
       return;
     }
 
-    if (playerOne.name === playerTwo.name) {
+    if (
+      playerOne.name.trim().toLowerCase() ===
+      playerTwo.name.trim().toLowerCase()
+    ) {
       setErrorMessage("Player names must be different");
       return;
     }

@@ -22,7 +22,6 @@ const Game = () => {
           player1={players[0]}
           player2={players[1]}
           setPlayers={setPlayers}
-          gameRun={setGameRun}
         />
       )}
     </main>

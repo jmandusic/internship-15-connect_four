@@ -1,4 +1,5 @@
 .board {
+  position: relative;
   display: grid;
   grid-template-areas:
     ". . . . . . ."
@@ -21,17 +22,12 @@
   border: 0.25px solid black;
 }
 
-.circle__player,
-.circle--white {
+.circle__player {
   background-color: white;
   width: 70px;
   height: 70px;
   border: thin solid white;
   border-radius: 50%;
-}
-
-.circle--white {
-  z-index: -3;
 }
 
 .circle__player {
@@ -49,11 +45,89 @@
   background-color: yellow;
 }
 
+.board__message-container {
+  position: absolute;
+  z-index: -1;
+  top: -140px;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 135px;
+  width: 720px;
+  background-color: white;
+}
+
+.board__message {
+  padding-bottom: 20px;
+  color: red;
+  font-weight: bold;
+}
+
 @keyframes circleDrop {
   from {
-    transform: translateY(-650px);
+    transform: translateY(-700px);
   }
   to {
     transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 1630px) {
+  .board {
+    margin-top: -50px;
+  }
+  .board__cell {
+    width: 150px;
+    height: 150px;
+    border: 0.25px solid black;
+  }
+  .circle__player,
+  .circle--white {
+    width: 100px;
+    height: 100px;
+  }
+  .board__message-container {
+    width: 1070px;
+  }
+  .board__message {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .board__cell {
+    width: 75px;
+    height: 75px;
+  }
+  .circle__player,
+  .circle--white {
+    width: 50px;
+    height: 50px;
+  }
+  .board__message-container {
+    width: 540px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .board {
+    margin-right: 0;
+    margin-top: 100px;
+  }
+  .board__cell {
+    width: 40px;
+    height: 40px;
+    border: 0.1px solid black;
+  }
+  .circle__player,
+  .circle--white {
+    width: 30px;
+    height: 30px;
+  }
+  .board__message-container {
+    top: -500px;
+    width: 300px;
+    height: 500px;
   }
 }

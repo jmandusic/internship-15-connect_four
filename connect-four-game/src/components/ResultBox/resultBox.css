@@ -1,0 +1,43 @@
+.result__box {
+  position: absolute;
+  top: -100%;
+  left: calc((100% - 80%) / 2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+  border: 3px solid #999999;
+  background-color: white;
+}
+
+.result__box--header {
+  font-size: 15px;
+  text-align: center;
+}
+
+.result__box--button {
+  outline: none;
+  margin-top: 25px;
+  padding: 10px;
+  width: 60%;
+  border: 2px solid #999999;
+  border-radius: 10px;
+  background-color: #999999;
+  color: white;
+  cursor: pointer;
+}
+
+.result__box--button:hover {
+  border-color: lightgrey;
+  background-color: lightgrey;
+}
+
+@media screen and (min-width: 768px) {
+  .result__box  {
+    position: absolute;
+    margin-top: 2000px;
+    left: 0;
+  }
+}
