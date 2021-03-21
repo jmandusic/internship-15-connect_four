@@ -32,6 +32,7 @@ export const checkWinVertical = (currentCells) => {
       const nextCell3 = currentCells[row * 7 + column - 21];
       if (
         currentCell?.player &&
+        checkIfFourDifferentRows(currentCell, nextCell, nextCell2, nextCell3) &&
         checkIfCellsEqual(currentCell, nextCell, nextCell2, nextCell3)
       ) {
         return currentCell.player;

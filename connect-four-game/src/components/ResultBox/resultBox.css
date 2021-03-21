@@ -9,6 +9,7 @@
   width: 80%;
   height: 80%;
   border: 3px solid #999999;
+  border-radius: 20px;
   background-color: white;
 }
 
@@ -27,6 +28,7 @@
   background-color: #999999;
   color: white;
   cursor: pointer;
+  max-width: 300px;
 }
 
 .result__box--button:hover {
@@ -35,9 +37,15 @@
 }
 
 @media screen and (min-width: 768px) {
-  .result__box  {
-    position: absolute;
-    margin-top: 2000px;
-    left: 0;
+  .result__box {
+    top: calc((100% - 80%) / 2);
+  }
+
+  .result__box--header {
+    font-size: 25px;
+  }
+
+  .result__box--button {
+    font-size: 20px;
   }
 }
